@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cartita Mágica para Sofi 💖</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #ffd6e0, #ff9a9e, #ff4d6d, #ffc1d9);
+    background-size: 800% 800%;
+    animation: gradient 15s ease infinite;
+}
+
+/* Gradiente animado */
+@keyframes gradient {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Sobre */
+#envelope {
+    width: 360px;
+    height: 220px;
+    background: linear-gradient(135deg, #ff4d6d, #ff758f);
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+    transition: transform 0.4s, box-shadow 0.4s;
+    text-align: center;
+    z-index: 10;
+}
+#envelope:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px rgba(255,77,109,0.7);
+}
+
+/* Carta */
+#letter {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 360px;
+    background: #fff0f6;
+    padding: 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    animation: aparecer 1s ease;
+    z-index: 10;
+}
+@keyframes aparecer {
+    from { transform: translateY(120px) scale(0.7); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Nombres brillantes */
+.brilho {
+    background: linear-gradient(90deg, #ff4d6d, #ffd6e0, #ff4d6d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 2s linear infinite;
+    font-weight: bold;
+}
+@keyframes shine {
+    0% { background-position: -200px; }
+    100% { background-position: 200px; }
+}
+
+/* Texto */
+p {
+    color: #444;
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0;
+    white-space: pre-line;
+}
+
+/* Corazones */
+.heart {
+    position: absolute;
+    animation: flotar 5s linear infinite;
+}
+.big-heart {
+    font-size: 30px;
+    opacity: 0.9;
+    animation: flotar 6s linear infinite;
+}
+@keyframes flotar {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-900px) scale(1.5); opacity: 0; }
+}
+
+/* Destellos */
+.star {
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    opacity: 0.8;
+    animation: starMove linear infinite;
+}
+@keyframes starMove {
+    0% { transform: translateY(0px) translateX(0px); opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-800px) translateX(50px); opacity: 0; }
+}
+
+/* Burbujas */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    animation: bubbleRise linear infinite;
+}
+@keyframes bubbleRise {
+    0% { transform: translateY(0) scale(0.5); opacity: 0.5; }
+    50% { opacity: 0.7; }
+    100% { transform: translateY(-900px) scale(1); opacity: 0; }
+}
+
+/* Confeti */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff4d6d;
+    opacity: 0.9;
+    transform: rotate(0deg);
+    animation: confettiFall linear infinite;
+    border-radius: 2px;
+}
+@keyframes confettiFall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(800px) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="envelope">💌 Abrir carta<br><span class="brilho">Para Sofi</span></div>
+
+<div id="letter">
+    <h2 class="brilho">Sofi ❤️</h2>
+
+    <p id="texto">
+Quería hacer algo diferente para vos, algo que no sea solo un mensaje,
+sino algo que realmente muestre lo que siento.
+No soy perfecto escribiendo, pero cada palabra que ves acá
+sale desde lo más sincero de mí.
+
+Desde que llegaste a mi vida, todo se siente distinto.
+Me hacés sonreír sin darme cuenta, pensar en vos me calma
+y hablar con vos se volvió una de mis partes favoritas del día.
+A veces no sé cómo explicarlo bien, pero tu forma de ser,
+tu manera de estar, incluso en la distancia,
+significa mucho para mí.
+
+Gracias por quedarte, por escucharme,
+por ser vos.
+Gracias por hacerme sentir especial sin siquiera intentarlo.
+Quería que supieras que te valoro, que te pienso,
+y que me importás más de lo que a veces puedo decir.
+
+Esta cartita es solo una pequeña prueba de todo eso,
+hecha con tiempo, cariño y pensando en vos en cada detalle.
+
+Con todo mi corazón,
+Lucas 💖
+    </p>
+
+    <p class="brilho">💖 Fin 💖</p>
+
+    <!-- Spotify -->
+    <iframe style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/5XeFesFbtLpXzIVDNQP22n"
+        width="100%" height="80"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+</div>
+
+<script>
+const envelope = document.getElementById("envelope");
+const letter = document.getElementById("letter");
+const texto = document.getElementById("texto");
+
+// Destellos
+for(let i=0;i<50;i++){
+    const star = document.createElement("div");
+    star.classList.add("star");
+    star.innerHTML = "✨";
+    star.style.left = Math.random()*100 + "vw";
+    star.style.top = Math.random()*100 + "vh";
+    star.style.fontSize = Math.random()*15 + 8 + "px";
+    star.style.animationDuration = (Math.random()*5 + 5) + "s";
+    document.body.appendChild(star);
+}
+
+// Corazones grandes
+for(let i=0;i<30;i++){
+    const bigHeart = document.createElement("div");
+    bigHeart.classList.add("big-heart");
+    bigHeart.innerHTML = "❤️";
+    bigHeart.style.left = Math.random()*100 + "vw";
+    bigHeart.style.top = Math.random()*100 + "vh";
+    bigHeart.style.animationDuration = (Math.random()*4 + 4) + "s";
+    document.body.appendChild(bigHeart);
+}
+
+// Burbujas
+for(let i=0;i<40;i++){
+    const bubble = document.createElement("div");
+    bubble.classList.add("bubble");
+    bubble.style.width = bubble.style.height = (Math.random()*15 + 5) + "px";
+    bubble.style.left = Math.random()*100 + "vw";
+    bubble.style.top = Math.random()*100 + "vh";
+    bubble.style.animationDuration = (Math.random()*8 + 5) + "s";
+    document.body.appendChild(bubble);
+}
+
+// Confeti
+function createConfetti() {
+    for(let i=0;i<50;i++){
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.left = Math.random()*100 + "vw";
+        confetti.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 70%)`;
+        confetti.style.animationDuration = (Math.random()*5 + 5) + "s";
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 6000);
+    }
+}
+
+envelope.onclick = () => {
+    envelope.style.display = "none";
+    letter.style.display = "block";
+
+    // Corazones pequeños
+    for (let i = 0; i < 70; i++) {
+        createHeart();
+    }
+
+    // Confeti al final del mensaje
+    setTimeout(() => createConfetti(), 2000);
+
+    // Mostrar texto como escritura
+    let fullText = texto.textContent;
+    texto.textContent = '';
+    texto.style.opacity = 1;
+    let index = 0;
+    let interval = setInterval(() => {
+        texto.textContent += fullText[index];
+        index++;
+        if(index === fullText.length) clearInterval(interval);
+    }, 20);
+};
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 30 + 20 + "px";
+    heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}
+</script>
+
+</body>
+</html>
